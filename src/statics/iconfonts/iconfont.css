@@ -1,0 +1,29 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1581865857984'); /* IE9 */
+  src: url('iconfont.eot?t=1581865857984#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOwAAsAAAAAB8QAAANjAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqDCIJrATYCJAMQCwoABCAFhG0HPRvSBsgOJQnBwADgoQBgPPy3N3ffzNufyWxKV0X1YinNonI8pTuMQhEjMB6M5vhuxA62maGcwk09M4MTV3qbI4GmFpZm7n+xl7u89H8up3dXic9vZzmuQWNvPuoFGG8NaOwFkqYFkqA3jF3QElcT6Db1wz3OL60FYZLZKRCfsKWCsIxMNiSHJgwVI1PcgWCtfHFcxNfg+/HfRYRRjCqz5/M3eQbI/NX3dRk/5f8Ugz0EcKbTgI2j4giQxLtK3Qt85DvC62r9IDeApilMVRH/uuz/f8Q9irhZf3mEohIDM3EGXCF/5VdfByf4FY9T+FWWoMIHkbbBgc+Ab5iy/jKDVDLGUaO1VbFNC1UZXcfGK+tP9qqtc25Y0YcbU68rjYTbiFrBIw4YuKCjsKx1vXpAnA9Aj/6jz7vMTXU6pwY3T63buRZMWSfOP8FxH+cXnUs7dOvWzdTmzQ/eFOYVn799e2rMjjt3KubdrLw5re7aLXF+MqCur3LnvnL9ds8uF85HRTnv1LemuceTQw0DnT+PjPxW3UDSQ1wQHPLs8CFw1Cy41iv3Gmr4X8u57U6vqHNkazj9TtDv9AA7lShzwQ8k0lvBDYaIJZnJL4c62YU2LX637f6te0dw7VPGrL2PDsjEMb6XvXzT/T3e3qmF8EGDZDbJNd+vzeQ3+dNia1x+6PLVhmn5WeP6p+3Zc8AOH+oPaW64a/ILARvAZGr9xo8AYPK/Hq0i8L4u5Fv9ud+4W/qi1bBGqb/CxAQ/yYSpgXUyNcEwzuvndOb8J07HjNR4pjxT4Tts3Z7O/IhuBV3HBJiWPJ5Cuto5kdCsJlBM2YCq2UKTcgQjY1cwaO5Bd6hg/Ngyihc5jQMzAYQFW6CY8x2qBZfQpDyCkTWfYLAQPHS30WzGsZ3AQg5FKkMG1MZCrBO/aSuZECZXI2ukV6VpXkBVEA1gJ4ySIvPBAuRHdIo+gVFWNGMmNCnxwXywHvJ6CbQpcSOdSS7G7GRZNqueJOnEBwSPUIiKQQyQZiwI0xF+ppebEQqfr4ZYRvJS0QZClVWBUAG4eiiKJLIDWiD2dyLcyjkBo1iiMYwJMlGED5QPNIjX8hGQXd3MDdExEtcAjy2ZjLKZXcXS8lLfG86Dzjwoo0SNjJHyAjuy1HCfavmxiREFAAA=') format('woff2'),
+  url('iconfont.woff?t=1581865857984') format('woff'),
+  url('iconfont.ttf?t=1581865857984') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1581865857984#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bi:before {
+  content: "\e62b";
+}
+
+.icon-Aa:before {
+  content: "\e636";
+}
+
+.icon-magnifier:before {
+  content: "\e64d";
+}
+

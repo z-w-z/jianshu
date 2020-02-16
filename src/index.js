@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.js';
+import './statics/iconfonts/iconfont.css'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
