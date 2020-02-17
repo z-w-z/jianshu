@@ -50,12 +50,16 @@ export const SearchWrapper = styled.div`
 		line-height: 30px;
 		border-radius: 15px;
 		text-align: center;
+		&.focused {
+			background: #777;
+			color: #fff;
+		}
 	}
 `;
 export const NavSearch = styled.input.attrs({placeholder:"搜索"})`
    width:160px;
    height:38px;
-   padding:0 20px;
+   padding:0 30px 0 20px;
    margin-top:9px;
    margin-left:20px;
    box-sizing:border-box;
@@ -66,6 +70,9 @@ export const NavSearch = styled.input.attrs({placeholder:"搜索"})`
    font-size:15px;
    &::placeholder{
     color:#999;
+   }
+   &.focused{
+     width:240px;
    }
 `
 export const Addition = styled.div`
