@@ -1,6 +1,7 @@
 import React from "react"
 import { connect } from 'react-redux'
 import { HeaderWrapper,Logo,Nav,NavItem,NavSearch ,Addition,Button ,SearchWrapper} from  './style'
+import {actionCreators} from './store'
 const  Header = (props) =>{
     return (
         <HeaderWrapper>
@@ -40,16 +41,14 @@ const mapStateToProps = (state) => {
 const mapDispathToProps = (dispatch) => {
     return {
         handleFocused(){
-          const action = {
-              type:'search_fucsed'
-          }
-          dispatch(action)
+     /*     const action = {
+              type:SEARCH_FOCUS
+          }*/
+          dispatch(actionCreators.searchFocus())
         },
         handleBlur(){
-            const action = {
-                type:'search_blur'
-            }
-            dispatch(action)
+
+            dispatch(actionCreators.searchBlur())
     }
     }
 }
