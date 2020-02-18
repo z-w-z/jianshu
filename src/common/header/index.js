@@ -19,8 +19,9 @@ import {actionCreators} from './store'
 
 class Header extends Component{
 
-    getList(show){
-        if(show){
+    getList(){
+        const { list,focused } = this.props;
+        if( focused){
             return(
                 <SearchInfo>
                     <SearchInfoTitle>
@@ -30,7 +31,7 @@ class Header extends Component{
                         </SearchInfoSwitch>
                     </SearchInfoTitle>
                     <SearchInfoList>
-                        {this.props.list.map( (item) => {
+                        {list.map( (item) => {
                             return <SearchInfoItem>{item}</SearchInfoItem>
                         })}
                     </SearchInfoList>
@@ -43,7 +44,9 @@ class Header extends Component{
 
     }
     render() {
+        const { focused,handleFocused,handleBlur } = this.props
         return (
+
             <HeaderWrapper>
                 <Logo href={"/"}/>
                 <Nav>
@@ -55,12 +58,12 @@ class Header extends Component{
                     </NavItem>
                     <SearchWrapper>
                         <NavSearch
-                            className = {this.props.focused ? 'focused ' : ''}
-                            onFocus={this.props.handleFocused}
-                            onBlur = {this.props.handleBlur}
+                            className = {focused ? 'focused ' : ''}
+                            onFocus={handleFocused}
+                            onBlur = {handleBlur}
                         ></NavSearch>
-                        <span className = {this.props.focused ? 'focused iconfont' : 'iconfont'}>&#xe64d;</span>
-                        { this.getList(this.props.focused) }
+                        <span className = {focused ? 'focused iconfont' : 'iconfont'}>&#xe64d;</span>
+                        { this.getList() }
                     </SearchWrapper>
                     <Addition >
                         <Button className='reg'>注册</Button>
