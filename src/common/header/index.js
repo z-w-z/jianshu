@@ -1,4 +1,4 @@
-import React from "react"
+import React ,{ Component }from "react"
 import { connect } from 'react-redux'
 import {
     HeaderWrapper,
@@ -16,9 +16,10 @@ import {
     SearchInfoItem,
 } from  './style'
 import {actionCreators} from './store'
-const  Header = (props) =>{
 
-       const getList =(show) =>{
+class Header extends Component{
+
+    getList(show){
         if(show){
             return(
                 <SearchInfo>
@@ -29,12 +30,9 @@ const  Header = (props) =>{
                         </SearchInfoSwitch>
                     </SearchInfoTitle>
                     <SearchInfoList>
-                        <SearchInfoItem>教育</SearchInfoItem>
-                        <SearchInfoItem>教育</SearchInfoItem>
-                        <SearchInfoItem>教育</SearchInfoItem>
-                        <SearchInfoItem>教育</SearchInfoItem>
-                        <SearchInfoItem>教育</SearchInfoItem>
-                        <SearchInfoItem>教育</SearchInfoItem>
+                        {this.props.list.map( (item) => {
+                            return <SearchInfoItem>{item}</SearchInfoItem>
+                        })}
                     </SearchInfoList>
                 </SearchInfo>
             )
@@ -42,46 +40,52 @@ const  Header = (props) =>{
         }else {
             return null;
         }
+
     }
-    return (
-        <HeaderWrapper>
-            <Logo href={"/"}/>
-            <Nav>
-                <NavItem className='left active '>首页</NavItem>
-                <NavItem className='left'>下载APP</NavItem>
-                <NavItem className='right'>登录</NavItem>
-                <NavItem className='right'>
-                    <span className="iconfont">&#xe636;</span>
-                </NavItem>
-                <SearchWrapper>
-                    <NavSearch
-                        className = {props.focused ? 'focused ' : ''}
-                        onFocus={props.handleFocused}
-                        onBlur = {props.handleBlur}
-                    ></NavSearch>
-                    <span className = {props.focused ? 'focused iconfont' : 'iconfont'}>&#xe64d;</span>
-                    { getList(props.focused) }
-                </SearchWrapper>
-                <Addition >
-                    <Button className='reg'>注册</Button>
-                    <Button className='writting'>
-                        <i className="iconfont">&#xe62b;</i>
-                        写文章
-                    </Button>
-                </Addition>
-            </Nav>
-        </HeaderWrapper>
-    );
+    render() {
+        return (
+            <HeaderWrapper>
+                <Logo href={"/"}/>
+                <Nav>
+                    <NavItem className='left active '>首页</NavItem>
+                    <NavItem className='left'>下载APP</NavItem>
+                    <NavItem className='right'>登录</NavItem>
+                    <NavItem className='right'>
+                        <span className="iconfont">&#xe636;</span>
+                    </NavItem>
+                    <SearchWrapper>
+                        <NavSearch
+                            className = {this.props.focused ? 'focused ' : ''}
+                            onFocus={this.props.handleFocused}
+                            onBlur = {this.props.handleBlur}
+                        ></NavSearch>
+                        <span className = {this.props.focused ? 'focused iconfont' : 'iconfont'}>&#xe64d;</span>
+                        { this.getList(this.props.focused) }
+                    </SearchWrapper>
+                    <Addition >
+                        <Button className='reg'>注册</Button>
+                        <Button className='writting'>
+                            <i className="iconfont">&#xe62b;</i>
+                            写文章
+                        </Button>
+                    </Addition>
+                </Nav>
+            </HeaderWrapper>
+        );
+    }
+
 }
 
 const mapStateToProps = (state) => {
     return {
         focused:state.get("header").get("focused"),
+        list:state.getIn(['header',"list"])
     }
 }
 const mapDispathToProps = (dispatch) => {
     return {
         handleFocused(){
+            dispatch(actionCreators.getList())
           dispatch(actionCreators.searchFocus())
         },
         handleBlur(){
