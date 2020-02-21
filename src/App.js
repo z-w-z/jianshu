@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import Header from './common/header'
 import './App.css';
 import { Provider } from 'react-redux'
+import Home from "./page/home"
+import Detail from "./page/detail"
 import { BrowserRouter,Route} from 'react-router-dom'
 import store from './store/index'
 
@@ -13,8 +15,8 @@ function App() {
               <Header/>
               <BrowserRouter>
                   <div>
-                      <Route path='/' exact render={() =>(<div>home</div>)}></Route>
-                      <Route path='/detail' exact render={() =>(<div>detail</div>)}></Route>
+                      <Route path='/' exact component={Home}></Route>
+                      <Route path='/detail' exact component={Detail}></Route>
                   </div>
 
               </BrowserRouter>
